@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="54ca6fd7-bf66-4e7d-859e-1c2a695ed741" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -167,12 +165,12 @@
       <updated>1499754438390</updated>
       <workItem from="1499754440412" duration="1676000" />
       <workItem from="1499800605113" duration="1795000" />
-      <workItem from="1499802433142" duration="361000" />
+      <workItem from="1499802433142" duration="652000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3832000" />
+    <option name="totallyTimeSpent" value="4123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1002" y="69" width="858" height="909" extended-state="0" />
