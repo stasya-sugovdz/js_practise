@@ -17,9 +17,12 @@ body {
 .images-list {
     text-align: center;
 }
-.image-holder {
+.image-block {
     display: inline-block;
     width: 20%;
+}
+.image-holder {
+    display: inline-block;
     margin: 5px;
     padding: 5px;
     border: 1px solid #fff;
@@ -27,7 +30,7 @@ body {
     border-radius: 5px;
     vertical-align: top;
     text-align: center;
-    height: 200px;
+    height: 300px;
 }
 .image {
     height: 100%;
@@ -35,4 +38,11 @@ body {
     max-height: 100%;
     vertical-align: center;
     border-radius: 5px;
+}
+.image-text {
+    font-size: 0.9em;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 0;
 }
