@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/stasya-sugovdz/js_practise#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-concat-css": "^2.3.0"
   }
 }
