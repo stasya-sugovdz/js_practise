@@ -1,55 +1,75 @@
 @import '../variables.styl'
 
 body
-  font-size: base
-  line-height: lh
-  background: white url("../img/background.jpeg") 0 0 no-repeat
-  background-size: inherit
-  min-height: 100%
+  font-size base
+  line-height lh
+  background lightest url("../../img/background.jpeg") 0 0 no-repeat
+  background-size cover
+  min-height 100%
+
+h2
+  font-size 2em
+  text-align center
+  line-height lh
+
+.main-title
+  font-style 2.5em
+  text-align center
+  color lightest
+.white
+  color lightest
+.subtitle
+  text-align center
+  font-size 1.1em
+  line-height lh
 
 .content
-  min-height: 100%
-  padding: 20px   //jade
-  margin: 10px auto
-  background: rgba(255, 255, 255, 0.2)
-  border: 1px solid white
-  border-radius: 5px
+  min-height 100%
+  margin 10px auto
+  background rgba(255, 255, 255, 0.2)
+  border 1px solid lightest
+  border-radius 5px
 
 .image
   &__list
-    text-align: center
+    text-align center
 
   &__block
-    display: inline-block
-    width: 20%
+    display inline-block
+    width 20%
     &:hover
       .image__holder
-        border-color: hotpink
+        border-color darkred
+      .image__text
+        background rgba(255, 255, 255, 0.5)
+        color darkest
+        border-color darkred
 
   &__holder
-    margin: 5px   //jade
-    padding: 5px  //jade
-    border: 1px solid white
-    background: rgba(0, 0, 0, 0.2)
-    vertical-align: top
-    text-align: center
-    height: 300px
-    width: 100%
-    border-radius: 5px
+    border 1px solid lightest
+    background rgba(0, 0, 0, 0.2)
+    vertical-align top
+    text-align center
+    height 300px
+    border-radius 5px
+    box-sizing border-box
 
-  &__item  //must change .image
-    height: 100%
-    max-width: 100%
-    max-height: 100%
-    vertical-align: center
-    border-radius: 5px
+  &__item
+    height 100%
+    max-width 100%
+    max-height 100%
+    vertical-align center
+    border-radius 5px
 
   &__text
-    font-size: 0.9em
-    background: rgba(0, 0, 0, 0.5)
-    color: white
-    padding: 5px 0
-    border-radius: 5px
-
+    font-size 0.9em
+    background rgba(0, 0, 0, 0.5)
+    color lightest
+    padding 5px 0
+    border-radius 5px
+    border: 1px solid #000
+.copyright
+  font-size 0.8em
+  font-style italic
 
 

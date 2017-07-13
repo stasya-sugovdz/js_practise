@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
-    bowerSync = require('browser-sync');
+    browserSync = require('browser-sync');
 
 var stylus = require('gulp-stylus'),
     concatCss = require('gulp-concat-css'),
@@ -19,7 +19,7 @@ var prettify = require('gulp-html-prettify'),
     htmlmin = require('gulp-minify-html');
 
 // Serve application
-gulp.task('serve', function() {
+gulp.task('browser-sync', function() {
   browserSync({
     server: {
       baseDir: 'app'
@@ -79,7 +79,7 @@ gulp.task('pug', function() {
       locals: YOUR_LOCALS
     }))
     .pipe(prettify({indent_char: ' ', indent_size: 3}))
-    .pipe(gulp.dest('./app/html/'))
+    .pipe(gulp.dest('./app/'))
     .pipe(browserSync.reload({stream: true}));
 });
 
@@ -106,10 +106,12 @@ gulp.task('pug', function() {
 // });
 
 
-gulp.task('watch', ['serve', 'styl', 'pug'], function() {
-  gulp.watch('./app/stylus/*.styl', ['styl']);
+gulp.task('watch', ['browser-sync', 'styl', 'pug', 'image'], function() {
+  gulp.watch('./app/stylus/**/*.styl', ['styl']);
   gulp.watch('./app/pug/*.pug', ['pug']);
-  gulp.watch('app/js/*.js', bowerSync.reload);
+  gulp.watch('app/js/*.js', browserSync.reload);
+  // gulp.watch('app/css/*.css', browserSync.reload);
+  // gulp.watch('app/html/*.html', browserSync.reload);
 });
 
 // //TODO gulp.task 'build', which will minimize index.css, index.js, index.html and get them to the build directory
