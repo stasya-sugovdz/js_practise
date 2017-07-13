@@ -2,17 +2,19 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync'),
+    del = require('del');
 
 var stylus = require('gulp-stylus'),
     concatCss = require('gulp-concat-css'),
-    cssmin = require('gulp-cssmin');
+    cssmin = require('gulp-cssnano');
 
 var concatJs = require('gulp-concat'),
     jsmin = require('gulp-uglify');
 
 var imagemin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant');
+    pngquant = require('imagemin-pngquant'),
+    cache = require('gulp-cache');
 
 var prettify = require('gulp-html-prettify'),
     pug = require('gulp-pug'),
@@ -31,19 +33,23 @@ gulp.task('browser-sync', function() {
 //compress images and return them to app/img directory
 gulp.task('image', function () {
   return gulp.src('./app/img/*')
-    .pipe(imagemin({
+    .pipe(cache(imagemin({ //compress images with caching
+
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       use: [pngquant()]
-    }))
+    })))
     .pipe(gulp.dest('./app/img/'));
 });
 
 // concat all .js files into index.js
 gulp.task('js', function () {
-  return gulp.src('./app/js/*.js')
+  return gulp.src('./app/js/libs/*.js')
+    .pipe(jsmin())
     .pipe(concatJs('index.js'))
-    .pipe(gulp.dest('./app/js/'));
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('./app/js/'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 //compress, add prefixers and concat all *.styl files to app/css/index.css
@@ -51,7 +57,7 @@ gulp.task('js', function () {
 gulp.task('styl', function() {
   return gulp.src('./app/stylus/**/*.styl')
     .pipe(stylus({
-      linenos: false,
+      linenos: true,
       compress: true
     }))
     .pipe(autoprefixer([
@@ -64,10 +70,11 @@ gulp.task('styl', function() {
       'Opera >= 12',
       'Safari >= 6'
     ]))
+    .pipe(cssmin())
     .pipe(concatCss('index.css'))
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./app/css/'))
     .pipe(browserSync.reload({stream: true}));
-
 });
 
 //transform .pug files into .html
@@ -83,41 +90,32 @@ gulp.task('pug', function() {
     .pipe(browserSync.reload({stream: true}));
 });
 
-//compress all *.css files(index.css) and rename to index.css.min
-// gulp.task('minCss', function () {
-//   return gulp.src('./app/css/*.css')
-//     .pipe(cssmin())
-//     .pipe(rename({suffix: '.min'}))
-//     .pipe(gulp.dest('./build/css/'));
-// });
-//
-// gulp.task('minJs', function () {
-//   return gulp.src('./app/js/index.js')
-//     .pipe(jsmin())
-//     .pipe(rename({suffix: '.min'}))
-//     .pipe(gulp.dest('./build/js/'));
-// });
-//
-// gulp.task('minHtml', function () {  //should we concat /*.html?
-//   return gulp.src('./app/html/*.html')
-//     .pipe(htmlmin())
-//     .pipe(rename({suffix: '.min'}))
-//     .pipe(gulp.dest('./build/html/'));
-// });
-
-
-gulp.task('watch', ['browser-sync', 'styl', 'pug', 'image'], function() {
+gulp.task('watch', ['styl', 'pug', 'image', 'js', 'browser-sync'], function() {
   gulp.watch('./app/stylus/**/*.styl', ['styl']);
   gulp.watch('./app/pug/*.pug', ['pug']);
-  gulp.watch('app/js/*.js', browserSync.reload);
-  // gulp.watch('app/css/*.css', browserSync.reload);
-  // gulp.watch('app/html/*.html', browserSync.reload);
+  gulp.watch('./app/js/**/*.js', ['js']);
+  //gulp.watch('app/js/*.js', browserSync.reload);
 });
 
-// //TODO gulp.task 'build', which will minimize index.css, index.js, index.html and get them to the build directory
-// gulp.task('build', ['minHtml', 'minCss', 'minJs'], function () {
-//   return gulp.src(['./app/html/*.html', './app/css/*.css', './app/js/*.js'])
-//     .pipe(minHtml())
-//     .pipe(minCss())
-//     .pipe(minJs());
-// });
+gulp.task('clean', function() {
+  return del.sync('dist'); // remove dist directory before 'build'
+});
+
+gulp.task('build', ['clean', 'styl', 'js', 'pug'], function() {
+
+  var buildCss = gulp.src('./app/css/index.min.css')
+    .pipe(gulp.dest('./dist/css/'));
+
+  var buildJs = gulp.src('./app/js/index.min.js')
+    .pipe(gulp.dest('./dist/js/'));
+
+  var buildImages = gulp.src('./app/img/*')
+    .pipe(gulp.dest('./dist/img/'));
+
+  var buildHtml = gulp.src('./app/*.html')
+    .pipe(htmlmin())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('./dist/'));
+
+});
+

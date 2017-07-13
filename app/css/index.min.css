@@ -201,22 +201,27 @@
 
 body {
   font-size: 17px;
-  line-height: 1.2;
   background: #fff url("../img/background.jpeg") 0 0 no-repeat;
-  -webkit-background-size: cover;
   background-size: cover;
   min-height: 100%;
 }
 
+body,
+h2 {
+  line-height: 1.2;
+}
+
 h2 {
   font-size: 2em;
+}
+
+.main-title,
+h2 {
   text-align: center;
-  line-height: 1.2;
 }
 
 .main-title {
   font-style: 2.5em;
-  text-align: center;
   color: #fff;
 }
 
@@ -233,7 +238,7 @@ h2 {
 .content {
   min-height: 100%;
   margin: 10px auto;
-  background: rgba(255,255,255,0.2);
+  background: hsla(0,0%,100%,.2);
   border: 1px solid #fff;
   border-radius: 5px;
 }
@@ -252,20 +257,18 @@ h2 {
 }
 
 .image__block:hover .image__text {
-  background: rgba(255,255,255,0.5);
+  background: hsla(0,0%,100%,.5);
   color: #000;
   border-color: #8b0000;
 }
 
 .image__holder {
   border: 1px solid #fff;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,.2);
   vertical-align: top;
   text-align: center;
   height: 300px;
   border-radius: 5px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -279,7 +282,7 @@ h2 {
 
 .image__text {
   font-size: .9em;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,.5);
   color: #fff;
   padding: 5px 0;
   border-radius: 5px;

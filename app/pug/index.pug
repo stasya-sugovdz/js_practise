@@ -2,7 +2,8 @@ doctype html
 html
     head
         title Lesson_1
-        link(rel='stylesheet' href='./css/index.css')
+        link(rel='stylesheet' href='./css/index.min.css')
+        script(src='./js/index.min.js')
 
     body
         .content
@@ -31,7 +32,7 @@ html
                 each item in imgList
                     .image__block.m-10
                         .image__holder.p-5
-                            img.image__item(src='../img/' + item + '.jpg')
+                            img.image__item(src='./img/' + item + '.jpg')
                         p.image__text Description text about picture
 
         .content
