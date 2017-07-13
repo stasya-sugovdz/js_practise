@@ -1,0 +1,55 @@
+@import '../variables.styl'
+
+body
+  font-size: base
+  line-height: lh
+  background: white url("../img/background.jpeg") 0 0 no-repeat
+  background-size: inherit
+  min-height: 100%
+
+.content
+  min-height: 100%
+  padding: 20px   //jade
+  margin: 10px auto
+  background: rgba(255, 255, 255, 0.2)
+  border: 1px solid white
+  border-radius: 5px
+
+.image
+  &__list
+    text-align: center
+
+  &__block
+    display: inline-block
+    width: 20%
+    &:hover
+      .image__holder
+        border-color: hotpink
+
+  &__holder
+    margin: 5px   //jade
+    padding: 5px  //jade
+    border: 1px solid white
+    background: rgba(0, 0, 0, 0.2)
+    vertical-align: top
+    text-align: center
+    height: 300px
+    width: 100%
+    border-radius: 5px
+
+  &__item  //must change .image
+    height: 100%
+    max-width: 100%
+    max-height: 100%
+    vertical-align: center
+    border-radius: 5px
+
+  &__text
+    font-size: 0.9em
+    background: rgba(0, 0, 0, 0.5)
+    color: white
+    padding: 5px 0
+    border-radius: 5px
+
+
+
