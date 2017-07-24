@@ -1,0 +1,14 @@
+h1.main-title Welcome to Lesson 3!!!
+    .content-holder
+        - var items = [1, 2, 3]
+
+        each item in items
+            .square
+
+    .content-holder
+        - var buttons = ['first element', 'last element', 'next element', 'previous element', 'add element', 'delete element', 'add to start']
+        - var functions = ['getFirst()', 'getLast()', 'getNext()', 'getPrevious()', 'addElement()', 'deleteElement()', 'addToStart()']
+
+        each text, i in buttons
+            button.btn(onclick = functions[i])
+                = text

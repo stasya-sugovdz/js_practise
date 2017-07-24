@@ -1,0 +1,117 @@
+@import '../variables.styl'
+@import '../media.styl'
+
+body
+  font-size base
+  line-height lh
+  background lightest url("../../img/background.jpeg") 0 0 no-repeat
+  background-size cover
+  min-height 100%
+
+h2
+  font-size 2em
+  text-align center
+  line-height lh
+
+.main-title
+  font-style 2.5em
+  text-align center
+  color goldenrod
+.white
+  color lightest
+.gold
+  color goldenrod
+.center
+  text-align center
+.subtitle
+  text-align center
+  font-size 1.1em
+  line-height lh
+
+.content
+  min-height 100%
+  margin 10px auto
+  background rgba(255, 255, 255, 0.2)
+  border 1px solid lightest
+  border-radius 5px
+.content-holder
+  display block
+  padding 10px
+
+.btn
+  background palegoldenrod
+  border-radius 5px
+  border 1px solid darkgoldenrod
+  padding 5px 10px
+  margin 5px
+  text-transform capitalize
+  font-size base*1.1
+  &:hover
+    background  darkgoldenrod
+    cursor pointer
+
+.image
+  &__list
+    text-align center
+
+  &__block
+    display inline-block
+    width 20%
+    @media screen and (min-width: 769px) and (max-width: 1199px)
+      width 45%
+
+    @media screen and (min-width: 501px) and (max-width: 768px)
+      width 45%
+
+    @media screen and (max-width: 500px)
+      width 100%
+
+    &:hover
+      .image__holder
+        border-color darkred
+      .image__text
+        background rgba(255, 255, 255, 0.5)
+        color darkest
+        border-color darkred
+      //@media screen and (max-width: 500px)
+      //  width 100%
+
+  &__holder
+    border 1px solid lightest
+    background rgba(0, 0, 0, 0.2)
+    vertical-align top
+    text-align center
+    height 300px
+    border-radius 5px
+    box-sizing border-box
+
+  &__item
+    height 100%
+    max-width 100%
+    max-height 100%
+    vertical-align center
+    border-radius 5px
+
+  &__text
+    font-size 0.9em
+    background rgba(0, 0, 0, 0.5)
+    color lightest
+    padding 5px 0
+    border-radius 5px
+    border: 1px solid #000
+
+.copyright
+  font-size 0.8em
+  font-style italic
+.square
+  display inline-block
+  margin 5px
+  height 40px
+  width 40px
+  background darkred
+  border 3px solid antiquewhite
+  border-radius 5px
+
+  //lesson 3
+#active
+  background: dodgerblue

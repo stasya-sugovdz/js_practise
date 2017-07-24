@@ -1,0 +1,41 @@
+doctype html
+html
+    head
+        title Lesson_1
+        link(rel='stylesheet' href='./css/index.min.css')
+        script(src='./js/index.min.js')
+
+    body
+        .content
+            include ./_header
+
+        .content.p-20
+
+            - var currentPage = 1
+
+            case currentPage
+                when 1
+                    h2 Section with images
+
+                when 2
+                    h2 Another section
+
+                default
+                    h2 Current section
+
+            p.subtitle Some interesting text about current section
+
+            .image__list
+
+                - var imgList = ['art', 'bird', 'linux', 'road']
+
+                each item in imgList
+                    .image__block.m-10
+                        .image__holder.p-5
+                            img.image__item(src='./img/' + item + '.jpg')
+                        p.image__text Description text about picture
+
+        .content.center
+            include ./_lesson3
+        .content
+            include ./_footer

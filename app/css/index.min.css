@@ -1,0 +1,356 @@
+.m-5 {
+  margin: 5px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-15 {
+  margin: 15px;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.m-25 {
+  margin: 25px;
+}
+
+.m-t-5 {
+  margin-top: 5px;
+}
+
+.m-t-10 {
+  margin-top: 10px;
+}
+
+.m-t-15 {
+  margin-top: 15px;
+}
+
+.m-t-20 {
+  margin-top: 20px;
+}
+
+.m-t-25 {
+  margin-top: 25px;
+}
+
+.m-b-5 {
+  margin-bottom: 5px;
+}
+
+.m-b-10 {
+  margin-bottom: 10px;
+}
+
+.m-b-15 {
+  margin-bottom: 15px;
+}
+
+.m-b-20 {
+  margin-botom: 20px;
+}
+
+.m-b-25 {
+  margin-bottom: 25px;
+}
+
+.m-l-5 {
+  margin-left: 5px;
+}
+
+.m-l-10 {
+  margin-left: 10px;
+}
+
+.m-l-15 {
+  margin-left: 15px;
+}
+
+.m-l-20 {
+  margin-left: 20px;
+}
+
+.m-l-25 {
+  margin-left: 25px;
+}
+
+.m-r-5 {
+  margin-right: 5px;
+}
+
+.m-r-10 {
+  margin-right: 10px;
+}
+
+.m-r-15 {
+  margin-right: 15px;
+}
+
+.m-r-20 {
+  margin-right: 20px;
+}
+
+.m-r-25 {
+  margin-right: 25px;
+}
+
+.p-5 {
+  padding: 5px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-15 {
+  padding: 15px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.p-25 {
+  padding: 25px;
+}
+
+.p-t-5 {
+  padding-top: 5px;
+}
+
+.p-t-10 {
+  padding-top: 10px;
+}
+
+.p-t-15 {
+  padding-top: 15px;
+}
+
+.p-t-20 {
+  padding-top: 20px;
+}
+
+.p-t-25 {
+  padding-top: 25px;
+}
+
+.p-b-5 {
+  padding-bottom: 5px;
+}
+
+.p-b-10 {
+  padding-bottom: 10px;
+}
+
+.p-b-15 {
+  padding-bottom: 15px;
+}
+
+.p-b-20 {
+  padding-botom: 20px;
+}
+
+.p-b-25 {
+  padding-bottom: 25px;
+}
+
+.p-l-5 {
+  padding-left: 5px;
+}
+
+.p-l-10 {
+  padding-left: 10px;
+}
+
+.p-l-15 {
+  padding-left: 15px;
+}
+
+.p-l-20 {
+  padding-left: 20px;
+}
+
+.p-l-25 {
+  padding-left: 25px;
+}
+
+.p-r-5 {
+  padding-right: 5px;
+}
+
+.p-r-10 {
+  padding-right: 10px;
+}
+
+.p-r-15 {
+  padding-right: 15px;
+}
+
+.p-r-20 {
+  padding-right: 20px;
+}
+
+.p-r-25 {
+  padding-right: 25px;
+}
+
+
+
+body {
+  font-size: 17px;
+  background: #fff url("../img/background.jpeg") 0 0 no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+
+body,
+h2 {
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.main-title,
+h2 {
+  text-align: center;
+}
+
+.main-title {
+  font-style: 2.5em;
+  color: #daa520;
+}
+
+.white {
+  color: #fff;
+}
+
+.gold {
+  color: #daa520;
+}
+
+.center,
+.subtitle {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  line-height: 1.2;
+}
+
+.content {
+  min-height: 100%;
+  margin: 10px auto;
+  background: hsla(0,0%,100%,.2);
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.content-holder {
+  display: block;
+  padding: 10px;
+}
+
+.btn {
+  background: #eee8aa;
+  border-radius: 5px;
+  border: 1px solid #b8860b;
+  padding: 5px 10px;
+  margin: 5px;
+  text-transform: capitalize;
+  font-size: 18.700000000000003px;
+}
+
+.btn:hover {
+  background: #b8860b;
+  cursor: pointer;
+}
+
+.image__list {
+  text-align: center;
+}
+
+.image__block {
+  display: inline-block;
+  width: 20%;
+}
+
+@media screen and (min-width:769px) and (max-width:1199px) {
+  .image__block {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width:501px) and (max-width:768px) {
+  .image__block {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .image__block {
+    width: 100%;
+  }
+}
+
+.image__block:hover .image__holder {
+  border-color: #8b0000;
+}
+
+.image__block:hover .image__text {
+  background: hsla(0,0%,100%,.5);
+  color: #000;
+  border-color: #8b0000;
+}
+
+.image__holder {
+  border: 1px solid #fff;
+  background: rgba(0,0,0,.2);
+  vertical-align: top;
+  text-align: center;
+  height: 300px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.image__item {
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: center;
+  border-radius: 5px;
+}
+
+.image__text {
+  font-size: .9em;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  padding: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.copyright {
+  font-size: .8em;
+  font-style: italic;
+}
+
+.square {
+  display: inline-block;
+  margin: 5px;
+  height: 40px;
+  width: 40px;
+  background: #8b0000;
+  border: 3px solid #faebd7;
+  border-radius: 5px;
+}
+
+#active {
+  background: #1e90ff;
+}
