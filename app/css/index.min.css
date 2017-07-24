@@ -222,15 +222,23 @@ h2 {
 
 .main-title {
   font-style: 2.5em;
-  color: #fff;
+  color: #daa520;
 }
 
 .white {
   color: #fff;
 }
 
+.gold {
+  color: #daa520;
+}
+
+.center,
 .subtitle {
   text-align: center;
+}
+
+.subtitle {
   font-size: 1.1em;
   line-height: 1.2;
 }
@@ -241,6 +249,26 @@ h2 {
   background: hsla(0,0%,100%,.2);
   border: 1px solid #fff;
   border-radius: 5px;
+}
+
+.content-holder {
+  display: block;
+  padding: 10px;
+}
+
+.btn {
+  background: #eee8aa;
+  border-radius: 5px;
+  border: 1px solid #b8860b;
+  padding: 5px 10px;
+  margin: 5px;
+  text-transform: capitalize;
+  font-size: 18.700000000000003px;
+}
+
+.btn:hover {
+  background: #b8860b;
+  cursor: pointer;
 }
 
 .image__list {
@@ -292,4 +320,18 @@ h2 {
 .copyright {
   font-size: .8em;
   font-style: italic;
+}
+
+.square {
+  display: inline-block;
+  margin: 5px;
+  height: 40px;
+  width: 40px;
+  background: #8b0000;
+  border: 3px solid #faebd7;
+  border-radius: 5px;
+}
+
+#active {
+  background: #1e90ff;
 }
