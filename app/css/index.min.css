@@ -97,6 +97,7 @@
 .m-r-25 {
   margin-right: 25px;
 }
+
 .p-5 {
   padding: 5px;
 }
@@ -278,6 +279,24 @@ h2 {
 .image__block {
   display: inline-block;
   width: 20%;
+}
+
+@media screen and (min-width:769px) and (max-width:1199px) {
+  .image__block {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width:501px) and (max-width:768px) {
+  .image__block {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .image__block {
+    width: 100%;
+  }
 }
 
 .image__block:hover .image__holder {
