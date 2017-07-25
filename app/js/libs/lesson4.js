@@ -30,5 +30,5 @@ function _addElement() {
 
 function changeElement() {
   var els = document.querySelectorAll('.drinks__link');
-  (els[3].innerHTML === '4. lemonade') ? els[3].style.cssText = 'background: rgba(51, 51, 255, 0.9);' : els[5].style.cssText = 'background: rgba(51, 51, 255, 0.9);';
+  (els[3].innerHTML === '4. lemonade') ? els[3].style.cssText = 'background: rgba(51, 51, 255, 0.9);' : els[(els.length - 4)].style.cssText = 'background: rgba(51, 51, 255, 0.9);';
 }
