@@ -1,0 +1,17 @@
+h1.main-title.drinks__title Welcome to Lesson 4!!!
+.content-holder.center
+    -var list = ['coffee', 'tea', 'water', 'lemonade','beer', 'wine', 'cognac']
+
+    ul.drinks
+        h3.drinks__subtitle Bar menu:
+        each li, i in list
+            li.drinks__item
+                a.drinks__link(href = '#')
+                    =i + 1 + '. ' + li
+
+.content-holder.center
+    - var buttons = [{title: 'Add class', func: 'addClass()'},{title: 'Add styles', func: 'addStyle()'}, {title: 'Add elements before and after', func: 'addElement()'}, {title: 'Change Lemonade', func: 'changeElement()'}]
+
+    each button in buttons
+        button.btn(onclick = button.func)
+            = button.title

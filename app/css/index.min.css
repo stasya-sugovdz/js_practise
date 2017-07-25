@@ -353,4 +353,42 @@ h2 {
 
 #active {
   background: #1e90ff;
+  color: #ff4500;
+}
+
+.drinks {
+  font-size: 20.4px;
+  color: green;
+  text-shadow: 0 0 5px #fff;
+  font-style: italic;
+  list-style: none;
+}
+
+.drinks__title {
+  margin: 5px;
+}
+
+.drinks__subtitle {
+  font-size: 28.9px;
+  margin: 5px;
+}
+
+.drinks__item {
+  display: inline-block;
+}
+
+.drinks__link {
+  display: block;
+  text-transform: capitalize;
+  color: #adff2f;
+  text-shadow: 0 0 5px #000;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: rgba(0,0,0,.6);
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.newClass {
+  background-color: rgba(193,66,66,.6);
 }

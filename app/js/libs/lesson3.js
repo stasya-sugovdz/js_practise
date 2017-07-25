@@ -24,19 +24,18 @@ function getLast() {
 }
 
 function getCurrentElement(val) {
-  var parent = document.querySelector('.content-holder');
-  var e = parent.querySelectorAll('.square');
-  var last = e.length - 1;
-  var currentElement = parent.querySelector('#active');
-
-  var start = 0;
-  var finish = last;
-  var currentSibling = currentElement.nextElementSibling;
+  var parent = document.querySelector('.content-holder'),
+      e = parent.querySelectorAll('.square'),
+      last = e.length - 1,
+      currentElement = parent.querySelector('#active');
+  var start = 0,
+      finish = last,
+      currentSibling = 'nextElementSibling';
 
   if( val === 'previous') {
     start = last;
     finish = 0;
-    currentSibling = currentElement.previousElementSibling;
+    currentSibling = 'previousElementSibling' ;
   }
 
   switch (currentElement) {
@@ -48,10 +47,9 @@ function getCurrentElement(val) {
       e[start].setAttribute('id', 'active');
       break;
     default:
-      currentSibling.setAttribute('id', 'active');
+      currentElement[currentSibling].setAttribute('id', 'active');
       currentElement.removeAttribute('id');
   }
-
 }
 
 function getNext() {
