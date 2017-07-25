@@ -6,13 +6,6 @@ h1.main-title Welcome to Lesson 3!!!
             .square
 
     .content-holder
-        //- var buttons = ['first element', 'last element', 'next element', 'previous element', 'add element', 'delete element', 'add to start']
-        //- var functions = ['getFirst()', 'getLast()', 'getNext()', 'getPrevious()', 'addElement()', 'deleteElement()', 'addToStart()']
-        //
-        //each text, i in buttons
-        //    button.btn(onclick = functions[i])
-        //        = text
-        //
         - var buttons = [{title: 'first element', func: 'getFirst()'},{title: 'last element', func: 'getLast()'}, {title: 'next element', func: 'getNext()'}, {title: 'previous element', func: 'getPrevious()'},{title: 'add element', func: 'addElement()'}, {title: 'delete element', func: 'deleteElement()'}, {title: 'add to start', func: 'addToStart()'}]
 
         each button in buttons

@@ -28,33 +28,30 @@ function getCurrentElement(val) {
   var e = parent.querySelectorAll('.square');
   var last = e.length - 1;
   var currentElement = parent.querySelector('#active');
-    if(val === 'next') {
-      switch (currentElement) {
-        case null:
-          e[0].setAttribute('id', 'active');
-          break;
-        case e[last]:
-          e[last].removeAttribute('id');
-          e[0].setAttribute('id', 'active');
-          break;
-        default:
-          currentElement.nextElementSibling.setAttribute('id', 'active');
-          currentElement.removeAttribute('id');
-      }
-    } else {
-      switch (currentElement) {
-        case null:
-          e[last].setAttribute('id', 'active');
-          break;
-        case e[0]:
-          e[0].removeAttribute('id');
-          e[last].setAttribute('id', 'active');
-          break;
-        default:
-          currentElement.previousElementSibling.setAttribute('id', 'active');
-          currentElement.removeAttribute('id');
-      }
-    }
+
+  var start = 0;
+  var finish = last;
+  var currentSibling = currentElement.nextElementSibling;
+
+  if( val === 'previous') {
+    start = last;
+    finish = 0;
+    currentSibling = currentElement.previousElementSibling;
+  }
+
+  switch (currentElement) {
+    case null:
+      e[start].setAttribute('id', 'active');
+      break;
+    case e[finish]:
+      e[finish].removeAttribute('id');
+      e[start].setAttribute('id', 'active');
+      break;
+    default:
+      currentSibling.setAttribute('id', 'active');
+      currentElement.removeAttribute('id');
+  }
+
 }
 
 function getNext() {
@@ -74,7 +71,7 @@ function addElement() {
 function deleteElement() {
   var parent = document.querySelector('.content-holder');
   var list = parent.childNodes;
-  if (list.length > 3 ) {parent.removeChild(list[(list.length - 1)])};
+  if (list.length > 3 ) {parent.removeChild(list[(list.length - 1)])}
 }
 
 function addToStart() {
