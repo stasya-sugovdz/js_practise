@@ -234,12 +234,16 @@ h2 {
   color: #daa520;
 }
 
-.center,
-.subtitle {
+.center {
   text-align: center;
 }
 
+.black {
+  color: #8b0000;
+}
+
 .subtitle {
+  text-align: center;
   font-size: 1.1em;
   line-height: 1.2;
 }

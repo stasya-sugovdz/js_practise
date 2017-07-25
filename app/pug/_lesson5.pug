@@ -1,0 +1,16 @@
+h1.main-title Welcome to Lesson 5!!!
+    .content-holder
+        .timer
+           h3.drinks__subtitle.black Timer
+           span.black.hours 00
+           span.black  :
+           span.black.minutes  00
+           span.black  :
+           span#seconds.black  00
+
+.content-holder.center
+    - var buttons = [{title: 'Start', func: 'onStart()'},{title: 'Stop', func: 'onStop()'}, {title: 'Set to zero', func: 'onSetZero()'}, {title: 'Reverse', func: 'onReverse()'}]
+
+    each button in buttons
+        button.btn(onclick = button.func)
+            = button.title
