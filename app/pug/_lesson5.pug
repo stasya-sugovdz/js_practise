@@ -14,3 +14,11 @@ h1.main-title Welcome to Lesson 5!!!
     each button in buttons
         button.btn(onclick = button.func)
             = button.title
+
+.content-holder.text-left
+    .content-holder
+        h3.drinks__subtitle.black.inline-block String transforms:
+        button.btn(onclick = 'getText()') Enter text
+
+    p.str-transform You entered:
+        ul.str-transform__result
