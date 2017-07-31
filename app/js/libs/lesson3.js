@@ -1,5 +1,5 @@
 function removeExistActive() {
-  var parent = document.querySelector('.content-holder');
+  var parent = document.querySelector('.lesson3');
   var e = parent.querySelector('#active');
 
   if(e) {
@@ -9,7 +9,7 @@ function removeExistActive() {
 
 function getFirst() {
   removeExistActive();
-  var parent = document.querySelector('.content-holder');
+  var parent = document.querySelector('.lesson3');
   var e = parent.querySelectorAll('.square');
 
   e[0].setAttribute('id', 'active');
@@ -17,14 +17,14 @@ function getFirst() {
 
 function getLast() {
   removeExistActive();
-  var parent = document.querySelector('.content-holder');
+  var parent = document.querySelector('.lesson3');
   var e = parent.querySelectorAll('.square');
   var last = e.length - 1;
   e[last].setAttribute('id', 'active');
 }
 
 function getCurrentElement(val) {
-  var parent = document.querySelector('.content-holder'),
+  var parent = document.querySelector('.lesson3'),
       e = parent.querySelectorAll('.square'),
       last = e.length - 1,
       currentElement = parent.querySelector('#active');
@@ -61,19 +61,19 @@ function getPrevious() {
 }
 
 function addElement() {
-  var parent = document.querySelector('.content-holder');
+  var parent = document.querySelector('.lesson3');
   var newItem = document.createElement('DIV');
   parent.appendChild(newItem).setAttribute('class', 'square');
 }
 
 function deleteElement() {
-  var parent = document.querySelector('.content-holder');
+  var parent = document.querySelector('.lesson3');
   var list = parent.childNodes;
   if (list.length > 3 ) {parent.removeChild(list[(list.length - 1)])}
 }
 
 function addToStart() {
-  var parent = document.querySelector('.content-holder');
+  var parent = document.querySelector('.lesson3');
   var newItem = document.createElement('DIV');
   var list = parent.childNodes;
   parent.insertBefore(newItem, list[0]).setAttribute('class', 'square');

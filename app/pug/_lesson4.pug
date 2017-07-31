@@ -1,5 +1,5 @@
 h1.main-title.drinks__title Welcome to Lesson 4!!!
-.content-holder.center
+.content-holder.center.lesson4
     -var list = ['coffee', 'tea', 'water', 'lemonade','beer', 'wine', 'cognac']
 
     ul.drinks
@@ -9,8 +9,8 @@ h1.main-title.drinks__title Welcome to Lesson 4!!!
                 a.drinks__link(href = '#')
                     =i + 1 + '. ' + li
 
-.content-holder.center
-    - var buttons = [{title: 'Add class', func: 'addClass()'},{title: 'Add styles', func: 'addStyle()'}, {title: 'Add elements before and after', func: 'addElement()'}, {title: 'Change Lemonade', func: 'changeElement()'}]
+.content-holder.center.lesson4
+    - var buttons = [{title: 'Add class', func: 'addClass()'},{title: 'Add styles', func: 'addStyle()'}, {title: 'Add elements before and after', func: 'addAdditionalElement()'}, {title: 'Change Lemonade', func: 'changeElement()'}]
 
     each button in buttons
         button.btn(onclick = button.func)

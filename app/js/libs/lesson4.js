@@ -9,7 +9,7 @@ function addStyle() {
   el.style.cssText = 'background: rgba(243, 132, 21, 0.7); padding-top: 20px; border: 2px dash orangered;';
 }
 
-function addElement() {
+function addAdditionalElement() {
   var el = document.querySelectorAll('.drinks__link')[2];
   el.style.cssText = 'background: rgba(243, 243, 21, 0.7);';
 

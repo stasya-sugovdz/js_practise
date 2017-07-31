@@ -1,46 +1,47 @@
 //timer functionality
-var i = 1;
+var count = 1;
 var go = true;
 var reverse = false;
 
-
 var timer = function() {
   var timerId = setTimeout(function time() {
-    (i < 10) ? document.getElementById('seconds').innerHTML = ' 0' + i : document.getElementById('seconds').innerHTML = '' + i;
+    (count < 10) ? document.getElementById('seconds').innerHTML = ' 0' + count : document.getElementById('seconds').innerHTML = ' ' + count;
 
-    if(i < 30 && go && !reverse) {
+    if(count < 30 && go && !reverse) {
       setTimeout(time, 1000);
-      i++;
-    } else if(reverse && go && i <= 30 && i > 0) {
+      count++;
+    } else if(reverse && go && count <= 30 && count > 0) {
       setTimeout(time, 1000);
-      i--;
+      count--;
     }
     }, 1000);
   return timerId;
 };
 
 function onStart() {
-  timer();
-  go = true;
+  onStop();
   reverse = false;
+  go = true;
+  timer();
 }
 
 function onStop() {
   go = false;
-  clearTimeout(timer);
+  clearTimeout(timer());
 }
 
 function onSetZero() {
   //go = false;
-  i = 0;
+  count = 0;
   //clearTimeout(timer);
   document.getElementById('seconds').innerHTML = ' 00';
 }
 
 function onReverse() {
-  if(i === 0 || i === 1) i = 30;
-  go = true;
+  onStop();
+  if(count === 0 || count === 1) count = 30;
   reverse = true;
+  go = true;
   timer();
 }
 
