@@ -1,0 +1,8 @@
+h1.main-title Welcome to Lesson 7!!!
+
+.content-holder.center
+    - var buttons = [{title: 'Start', func: 'onStart()'},{title: 'Stop', func: 'onStop()'}, {title: 'Set to zero', func: 'onSetZero()'}, {title: 'Reverse', func: 'onReverse()'}]
+
+    each button in buttons
+        button.btn(onclick = button.func)
+            = button.title

@@ -50,8 +50,9 @@ function onReverse() {
 function getText() {
   var text = prompt('Please, enter text', 'some text');
   if(text) {
-    var newText = text.replace(',', '').replace('.', '').replace('!', '').replace('?', '');
-    outputText(newText);
+    var newText = text.replace(/\W/g, ' ');
+
+    outputText(newText.replace(/\s{2,}/g, ' '));
     countA(newText)
   }
   // var parent = document.querySelector('.str-transform__result');

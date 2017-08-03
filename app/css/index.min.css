@@ -414,3 +414,17 @@ h2 {
 .inline-block {
   display: inline-block;
 }
+
+.lesson6__item {
+  margin: 5px;
+  border: 3px solid #fff;
+  background: hsla(0,0%,100%,.3);
+  border-radius: 5px;
+  min-height: 30px;
+  min-width: 200px;
+  vertical-align: top;
+}
+
+.lesson6__text {
+  font-size: 18.700000000000003px;
+}
